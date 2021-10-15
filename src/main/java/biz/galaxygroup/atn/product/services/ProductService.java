@@ -13,6 +13,9 @@ import javax.annotation.security.RolesAllowed;
 import java.text.ParseException;
 import java.util.List;
 
+/**
+ * @author blaise irakoze
+ */
 @RestController
 @CrossOrigin
 @RequestMapping("api/product")

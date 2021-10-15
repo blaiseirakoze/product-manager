@@ -1,4 +1,5 @@
 package biz.galaxygroup.atn.product.facades.impl;
+
 import biz.galaxygroup.atn.product.models.FilterModel;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,9 @@ import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+/**
+ * @author blaise irakoze
+ */
 @Component
 public class FilterProcessor implements biz.galaxygroup.atn.product.facades.FilterProcessor {
 

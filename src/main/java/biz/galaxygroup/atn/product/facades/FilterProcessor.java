@@ -4,6 +4,9 @@ import biz.galaxygroup.atn.product.models.FilterModel;
 
 import java.util.List;
 
+/**
+ * @author blaise irakoze
+ */
 public interface FilterProcessor {
 
     /**

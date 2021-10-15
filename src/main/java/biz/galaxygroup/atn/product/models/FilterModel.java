@@ -2,6 +2,9 @@ package biz.galaxygroup.atn.product.models;
 
 import java.util.Date;
 
+/**
+ * @author blaise irakoze
+ */
 public class FilterModel {
     private String pageNumber;
     private String pageSize;
