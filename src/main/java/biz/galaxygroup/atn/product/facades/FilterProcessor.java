@@ -7,7 +7,7 @@ import java.util.List;
 public interface FilterProcessor {
 
     /**
-     * FIlter processor interface
+     * Filter processor interface
      *
      * @param filterModel
      * @param table
