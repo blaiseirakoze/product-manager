@@ -104,10 +104,11 @@ public class ProductProcessor implements IProductProcessor {
         try {
             List<Object> list = filterProcessor.filterTransfer(pageNumber, pageSize, searchBy, startDate, endDate, "AtnProduct");
             GetResponseModel getResponseModel;
+            int totalItems = atnProductRepository.countAtnProduct();
             if (pageNumber == null) {
-                getResponseModel = new GetResponseModel(list.size(), list);
+                getResponseModel = new GetResponseModel(totalItems, list);
             } else {
-                getResponseModel = new GetResponseModel(list.size(), Integer.valueOf(pageNumber), list);
+                getResponseModel = new GetResponseModel(totalItems, Integer.valueOf(pageNumber), list);
             }
             return getResponseModel;
         } catch (Exception e) {
