@@ -20,6 +20,28 @@ public class AtnProduct {
     private Date creationTime;
     private String searchBy;
 
+    public AtnProduct() {
+    }
+
+    public AtnProduct(String id, String name, String status) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+    }
+
+    public AtnProduct(String id, String name, String status, Date creationTime, String searchBy) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+        this.creationTime = creationTime;
+        this.searchBy = searchBy;
+    }
+
+    public AtnProduct(String name, String status) {
+        this.name = name;
+        this.status = status;
+    }
+
     @PrePersist
     public void prepare() {
         this.creationTime = this.creationTime == null ? new Date() : this.creationTime;
@@ -57,6 +79,14 @@ public class AtnProduct {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getSearchBy() {
+        return searchBy;
+    }
+
+    public void setSearchBy(String searchBy) {
+        this.searchBy = searchBy;
     }
 
     @Override
