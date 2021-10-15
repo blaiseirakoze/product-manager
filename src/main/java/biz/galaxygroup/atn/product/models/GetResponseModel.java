@@ -1,5 +1,8 @@
 package biz.galaxygroup.atn.product.models;
 
+/**
+ * @author blaise irakoze
+ */
 public class GetResponseModel {
     private int totalItems;
     private int currentPage;
@@ -11,6 +14,11 @@ public class GetResponseModel {
     public GetResponseModel(int totalItems, int currentPage, Object data) {
         this.totalItems = totalItems;
         this.currentPage = currentPage;
+        this.data = data;
+    }
+
+    public GetResponseModel(int totalItems, Object data) {
+        this.totalItems = totalItems;
         this.data = data;
     }
 

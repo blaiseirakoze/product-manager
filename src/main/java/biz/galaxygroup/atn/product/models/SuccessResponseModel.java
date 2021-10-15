@@ -1,5 +1,8 @@
 package biz.galaxygroup.atn.product.models;
 
+/**
+ * @author blaise irakoze
+ */
 public class SuccessResponseModel {
     private String status;
     private String message = "action well performed";

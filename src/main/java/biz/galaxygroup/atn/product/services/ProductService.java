@@ -13,6 +13,9 @@ import javax.annotation.security.RolesAllowed;
 import java.text.ParseException;
 import java.util.List;
 
+/**
+ * @author blaise irakoze
+ */
 @RestController
 @CrossOrigin
 @RequestMapping("api/product")
@@ -82,8 +85,13 @@ public class ProductService {
      * @throws ParseException
      */
     @RolesAllowed({"admin"})
-    @RequestMapping(value = "/filter/", method = RequestMethod.GET)
-    public ResponseEntity<?> getProductByFilterPrams(@RequestParam String pageNumber, @RequestParam String pageSize, @RequestParam String searchBy, @RequestParam String startDate, @RequestParam String endDate) throws ParseException {
+    @RequestMapping(value = "/filter", method = RequestMethod.GET)
+    public ResponseEntity<?> getProductByFilterPrams(
+            @RequestParam(required = false) String pageNumber,
+            @RequestParam(required = false) String pageSize,
+            @RequestParam(required = false) String searchBy,
+            @RequestParam(required = false) String startDate,
+            @RequestParam(required = false) String endDate) throws ParseException {
         return new ResponseEntity<GetResponseModel>((GetResponseModel) productProcessor.getProductByFilterPrams(pageNumber, pageSize, searchBy, startDate, endDate), HttpStatus.OK);
     }
 }
