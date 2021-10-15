@@ -6,6 +6,9 @@ import biz.galaxygroup.atn.product.models.SuccessResponseModel;
 
 import java.util.List;
 
+/**
+ * @author blaise irakoze
+ */
 public interface IProductProcessor {
 
     /**
