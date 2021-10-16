@@ -1,5 +1,6 @@
 package biz.galaxygroup.atn.product.entities;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.UUID;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
  * @author blaise irakoze
  */
 @Entity
+@Table(indexes = {@Index(name = "searchBy", columnList = "searchBy")})
 public class AtnProduct {
     @Id
     @Column(name = "id", length = 90)
@@ -18,6 +20,7 @@ public class AtnProduct {
     @Column(name = "status", length = 30)
     private String status;
     private Date creationTime;
+    @Column(name = "searchBy", length = 40)
     private String searchBy;
 
     public AtnProduct() {
@@ -46,6 +49,11 @@ public class AtnProduct {
     public void prepare() {
         this.creationTime = this.creationTime == null ? new Date() : this.creationTime;
         this.id = this.id == null ? UUID.randomUUID().toString() : this.id;
+        this.searchBy = this.name + "," + this.status;
+    }
+
+    @PreUpdate
+    public void update() throws ParseException {
         this.searchBy = this.name + "," + this.status;
     }
 

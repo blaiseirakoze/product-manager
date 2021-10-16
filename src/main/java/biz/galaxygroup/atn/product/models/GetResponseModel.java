@@ -1,5 +1,8 @@
 package biz.galaxygroup.atn.product.models;
 
+/**
+ * @author blaise irakoze
+ */
 public class GetResponseModel {
     private int totalItems;
     private int currentPage;
